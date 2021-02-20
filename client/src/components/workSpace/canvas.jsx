@@ -1,0 +1,19 @@
+import React, {useEffect, useRef} from 'react';
+import {observer} from "mobx-react-lite";
+import canvasState from "../../store/canvasState";
+import toolsState from "../../store/toolsState";
+import Pencil from "../../tools/Pencil";
+
+const Canvas = observer(() => {
+
+    const canvasRef = useRef();
+
+    useEffect(()=>{
+        canvasState.setCanvas(canvasRef.current)
+        toolsState.setTools(new Pencil(canvasRef.current))
+    }, [])
+
+    return (<canvas ref={canvasRef} bd="0" cursor="circle" highlightthickness="0" width={document.documentElement.clientWidth} height={document.documentElement.clientHeight}/>);
+});
+
+export default Canvas;

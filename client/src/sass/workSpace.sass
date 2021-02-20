@@ -1,0 +1,93 @@
+.main
+  width: 100vw
+  height: 100vh
+  background-color: white
+  position: relative
+  overflow: hidden
+  canvas
+    width: 100%
+    height: 100%
+  .main__tool-bar
+    box-sizing: content-box
+    position: absolute
+    padding: 0 20px
+    z-index: 2
+    transform: translate(-50%, -15%)
+    left: 50%
+    top: 100%
+    background-color: #f5f5f5
+    transition: .3s
+    &:hover
+      transform: translate(-50%,-100%)
+    &__btn
+      outline: none
+      border: none
+      cursor: pointer
+      margin: 20px
+      width: 32px
+      height: 32px
+      background-size: cover
+      position: relative
+      transition: .2s
+      span
+        font-size: .8em
+        position: absolute
+        top: -12px
+        left: 0
+    .pencil
+      background: url('../assets/img/pencil-32.png') no-repeat center center
+    .square
+      background: url('../assets/img/square-32.png') no-repeat center center
+    .circle
+      background: url('../assets/img/circle-32.png') no-repeat center center
+    .line
+      background: url('../assets/img/line-32.png') no-repeat center center
+    .eraser
+      background: url('../assets/img/eraser-32.png') no-repeat center center
+    .active
+      transform: translateY(-25%)
+    &__settings
+      display: flex
+      justify-content: space-around
+      label, span
+        font-size: 14px
+  .main__menu-bar
+    position: absolute
+    z-index: 2
+    transform: translate(-50%, -90%)
+    left: 50%
+    top: 0%
+    background-color: #f5f5f5
+    transition: .3s
+    &:hover
+      transform: translate(-50%, 0%)
+    input
+      border: none
+      outline: none
+    &__btn
+      outline: none
+      border: none
+      cursor: pointer
+      margin: 20px
+      width: 32px
+      height: 32px
+      background-size: cover
+      position: relative
+      transition: .2s
+      span
+        font-size: .8em
+        position: absolute
+        bottom: -12px
+        left: 0
+        text-align: center
+    .undo
+      background: url('../assets/img/undo-32.png') no-repeat center center
+    .next
+      background: url('../assets/img/undo-32.png') no-repeat center center
+      transform: scale(-1, 1)
+      span
+        transform: scale(-1, 1)
+    .save
+      background: url('../assets/img/save-32.png') no-repeat center center
+    .active
+      transform: translateY(-25%)
