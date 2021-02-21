@@ -5,16 +5,21 @@ export default class Tool{
         this.destryoyEvents()
     }
 
-    setColor(color){
+    set fillColor(color){
         this.ctx.fillStyle = color
     }
 
-    setStrokeColor(color){
+    set strokeColor(color){
         this.ctx.strokeStyle = color
     }
 
-    setLineWidth(width){
+    set lineWidth(width){
+        console.log(this.ctx.lineWidth)
         this.ctx.lineWidth = width
+    }
+
+    get lineWidth(){
+        return this.ctx.lineWidth
     }
 
 

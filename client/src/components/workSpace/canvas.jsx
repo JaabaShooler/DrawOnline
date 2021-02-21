@@ -13,7 +13,11 @@ const Canvas = observer(() => {
         toolsState.setTools(new Pencil(canvasRef.current))
     }, [])
 
-    return (<canvas ref={canvasRef} bd="0" cursor="circle" highlightthickness="0" width={document.documentElement.clientWidth} height={document.documentElement.clientHeight}/>);
+    const mouseDownHendler = () => {
+        canvasState.pushToUndo(canvasRef.current.toDataURL())
+    }
+
+    return (<canvas ref={canvasRef} onMouseDown={()=>mouseDownHendler()} width={document.documentElement.clientWidth} height={document.documentElement.clientHeight}/>);
 });
 
 export default Canvas;

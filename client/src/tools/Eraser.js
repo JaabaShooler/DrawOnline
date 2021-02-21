@@ -5,9 +5,8 @@ export default class Eraser extends Pencil{
         super(canvas);
     }
     draw(x, y){
-        this.ctx.lineTo(x,y);
         this.ctx.strokeStyle = "White";
+        this.ctx.lineTo(x,y);
         this.ctx.stroke();
-        console.log('draw');
     }
 }
