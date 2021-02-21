@@ -31,6 +31,7 @@ export default class Pencil extends Tool{
     draw(x, y){
         this.ctx.lineTo(x,y);
         this.ctx.stroke();
+        this.ctx.fillStyle = 'Black'
         console.log('draw');
     }
 }

@@ -14,12 +14,16 @@ class ToolsState {
         this.tools.fillColor = color
     }
 
-    setFillColor(color){
+    setStrokeColor(color){
         this.tools.strokeColor = color
     }
 
-    setFillColor(width){
+    setLineWidth(width){
         this.tools.lineWidth = width
+    }
+
+    getLineWidth(){
+        return this.tools.lineWidth
     }
 }
 

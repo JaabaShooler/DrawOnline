@@ -9,6 +9,13 @@ import canvasState from '../../store/canvasState'
 import SettingsBar from "./settingsBar";
 
 const ToolBar = () => {
+
+    const changeColor = (e) => {
+        toolsState.setFillColor(e.target.value);
+        toolsState.setStrokeColor(e.target.value)
+    }
+
+
     return (
         <div className="main__tool-bar">
             <button
@@ -26,7 +33,7 @@ const ToolBar = () => {
             <button
                 className="main__tool-bar__btn eraser"
                 onClick={() => toolsState.setTools(new Eraser(canvasState.canvas))}><span>erase</span></button>
-            <input type="color"/>
+            <input  onChange={ e => changeColor(e)} type="color"/>
             <SettingsBar />
         </div>
     );
